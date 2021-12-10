@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class UrlsController < ApplicationController
   before_action :set_url, only: %i[ show edit update destroy ]
 
@@ -21,8 +23,15 @@ class UrlsController < ApplicationController
 
   # POST /urls or /urls.json
   def create
-    @url = Url.new(url_params)
+    @alias = url_params[:short_url]
+    @url_expiration = DateTime.now + 30
 
+    if @alias.empty?
+      @alias = SecureRandom.uuid[0..4]
+    end
+
+    @mini_url = "www.miniurl.com/urls/#{@alias}"
+    @url = Url.new(:original_url => url_params[:original_url], :created_by => url_params[:created_by], :short_url => @mini_url, :url_expiration => @url_expiration, :url_usage => 0)
     respond_to do |format|
       if @url.save
         format.html { redirect_to @url, notice: "Url was successfully created." }
