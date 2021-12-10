@@ -19,10 +19,9 @@ class UrlsController < ApplicationController
     @url_expiration = DateTime.now + 30
 
     if @alias.empty?
-      @alias = SecureRandom.uuid[0..4]
+      @alias = SecureRandom.uuid[0..6]
     end
-
-    @mini_url = "www.miniurl.com/urls/#{@alias}"
+    @mini_url = "#{Rails.application.config.url}/urls/#{@alias}"
     @url = Url.new(:original_url => url_params[:original_url], :created_by => url_params[:created_by], :short_url => @mini_url, :url_slug => @alias, :url_expiration => @url_expiration, :url_usage => 0)
     respond_to do |format|
       if @url.save
