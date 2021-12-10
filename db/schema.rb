@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_10_065205) do
+ActiveRecord::Schema.define(version: 2021_12_10_124903) do
 
   create_table "urls", force: :cascade do |t|
     t.string "original_url"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_065205) do
     t.string "created_by"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "url_slug"
   end
 
 end
