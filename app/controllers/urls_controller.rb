@@ -17,10 +17,6 @@ class UrlsController < ApplicationController
     @url = Url.new
   end
 
-  # GET /urls/1/edit
-  def edit
-  end
-
   # POST /urls or /urls.json
   def create
     @alias = url_params[:short_url]
@@ -43,19 +39,6 @@ class UrlsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /urls/1 or /urls/1.json
-  def update
-    respond_to do |format|
-      if @url.update(url_params)
-        format.html { redirect_to @url, notice: "Url was successfully updated." }
-        format.json { render :show, status: :ok, location: @url }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /urls/1 or /urls/1.json
   def destroy
     @url.destroy
@@ -73,6 +56,6 @@ class UrlsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def url_params
-      params.require(:url).permit(:original_url, :short_url, :url_expiration, :url_usage, :created_by)
+      params.require(:url).permit(:original_url, :short_url, :url_slug, :url_expiration, :url_usage, :created_by)
     end
 end
