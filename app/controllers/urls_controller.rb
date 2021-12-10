@@ -3,21 +3,17 @@ require 'securerandom'
 class UrlsController < ApplicationController
   before_action :set_url, only: %i[ show edit update destroy ]
 
-  # GET /urls or /urls.json
   def index
     @urls = Url.all
   end
 
-  # GET /urls/1 or /urls/1.json
   def show
   end
 
-  # GET /urls/new
   def new
     @url = Url.new
   end
 
-  # POST /urls or /urls.json
   def create
     @alias = url_params[:short_url]
     @url_expiration = DateTime.now + 30
@@ -39,7 +35,6 @@ class UrlsController < ApplicationController
     end
   end
 
-  # DELETE /urls/1 or /urls/1.json
   def destroy
     @url.destroy
     respond_to do |format|
