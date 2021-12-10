@@ -34,6 +34,13 @@ class UrlsController < ApplicationController
     end
   end
 
+  def redirect
+    @url = Url.find_by(url_slug: params[:url_slug])
+    @url.update(url_usage: @url.url_usage + 1)
+
+    redirect_to @url.original_url
+  end
+
   def destroy
     @url.destroy
     respond_to do |format|
