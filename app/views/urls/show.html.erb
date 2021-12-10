@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Original url:</strong>
+  <%= @url.original_url %>
+</p>
+
+<p>
+  <strong>Short url:</strong>
+  <%= @url.short_url %>
+</p>
+
+<p>
+  <strong>Url expiration:</strong>
+  <%= @url.url_expiration %>
+</p>
+
+<p>
+  <strong>Url usage:</strong>
+  <%= @url.url_usage %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @url.created_by %>
+</p>
+
+<%= link_to 'Edit', edit_url_path(@url) %> |
+<%= link_to 'Back', urls_path %>
