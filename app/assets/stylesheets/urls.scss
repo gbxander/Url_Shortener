@@ -1,3 +1,107 @@
 // Place all the styles related to the urls controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    background-color: #087da8c4;
+}
+ul {
+    list-style: none;
+}
+
+nav {
+    margin-bottom: 25px;
+}
+
+.show .card-header {
+    font-size: 20px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+.navbar-brand span {
+    margin-right: -5px;
+}
+.navbar-brand i {
+    font-size: 30px;
+}
+
+.navbar-nav {
+    li {
+        text-decoration: underline;
+        font-size: 16px;
+    }
+
+    a:hover {
+        background-color: grey;
+    }
+}
+
+.container {
+    display: flex;
+    padding: 0px;
+}
+
+
+.new-form-wrapper {
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    width: 550px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    color: #343a40;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    box-shadow: rgba(255, 50, 180, 0.4) 5px 5px, rgba(248, 47, 174, 0.3) 10px 10px, rgba(248, 49, 175, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+
+    input[type=text] {
+        margin-top: 5px;
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        outline: none;
+    }
+
+    input[type=submit] {
+        padding: 10px;
+        border: 2px solid #eee;
+        border-radius: 10px;
+        margin-top: 20px;
+        font-weight: bold;
+        width: 125px;
+        background-color: #28c98b;
+        color: #eee;
+    }
+
+    input[type=submit]:hover {
+        background-color: #23ad78
+    }
+}
+
+.show {
+    margin: 0 auto;
+    width: 500px;
+    .card-body {
+        padding: 20px;
+    }
+    .input-group {
+        margin-bottom: 20px;
+    }
+    .card-header {
+        font-size: 25px;
+        text-align: center;
+    }
+    .btn {
+        border: 2px solid #eee;
+        background-color: #28c98b;
+    }
+    .btn:hover {
+        background-color: #23ad78
+    }
+}
