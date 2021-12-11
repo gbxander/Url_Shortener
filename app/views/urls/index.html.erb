@@ -1,29 +1,25 @@
-<p id="notice"><%= notice %></p>
+<h1>Mini Urls</h1>
 
-<h1>Minified Urls</h1>
-
-<table>
-  <thead>
+<table class="table table-hover">
+  <thead class="table-light">
     <tr>
       <th>Original Url</th>
       <th>Short Url</th>
       <th>Url Expires</th>
       <th>Url Usage Rate</th>
       <th>Created By</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @urls.each do |url| %>
-      <tr>
+      <tr class="table-light">
         <td><%= url.original_url %></td>
-        <td><%= url.short_url %></td>
-        <td><%= url.url_expiration %></td>
-        <td><%= url.url_usage %></td>
+        <td><a href="/urls/<%= url.url_slug %>" target="_blank"><%= url.short_url %></a></td>
+        <td> <%= url.url_expiration.strftime("%B %-d, %Y") %></td>
+        <td> <%= url.url_usage %> </a></td>
         <td><%= url.created_by %></td>
-        <td><%= link_to 'Show', url %></td>
-        <td><%= link_to 'Edit', edit_url_path(url) %></td>
         <td><%= link_to 'Destroy', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -32,4 +28,3 @@
 
 <br>
 
-<%= link_to 'New Url', new_url_path %>
