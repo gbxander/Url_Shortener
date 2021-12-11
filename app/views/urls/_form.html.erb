@@ -18,7 +18,7 @@
   <div class="field">
     <div>Customize your link: (Optional)</div>
     <div class="container">
-    <div class="container-item"><input class="readonly" type="text" value=<%=Rails.application.config.url%>/ readonly disabled></div>
+    <div class="container-item"><input type="text" value="<%=Rails.application.config.url%>/" disabled></div>
     <div class="container-item"><%= form.text_field :short_url, :placeholder => "url alias" %></div>
     </div>
   </div>
