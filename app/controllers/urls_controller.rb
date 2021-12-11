@@ -25,7 +25,7 @@ class UrlsController < ApplicationController
     @url = Url.new(:original_url => url_params[:original_url], :created_by => url_params[:created_by], :short_url => @mini_url, :url_slug => @alias, :url_expiration => @url_expiration, :url_usage => 0)
     respond_to do |format|
       if @url.save
-        format.html { redirect_to @url, notice: "Url was successfully created." }
+        format.html { redirect_to "/urls/show/#{@url.id}", notice: "Url was successfully created." }
         format.json { render :show, status: :created, location: @url }
       else
         format.html { render :new, status: :unprocessable_entity }
