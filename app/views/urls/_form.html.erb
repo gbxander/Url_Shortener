@@ -10,25 +10,17 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :original_url %>
+    <div> Enter a URL to minify: </div>
     <%= form.text_field :original_url %>
   </div>
 
   <div class="field">
-    <%= form.label :short_url %>
-    <%= form.text_field :short_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url_expiration %>
-    <%= form.number_field :url_expiration %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url_usage %>
-    <%= form.number_field :url_usage %>
+    <div>Customize your link: (Optional)</div>
+    <div class="container">
+    <div class="container-item"><input class="readonly" type="text" value=<%=Rails.application.config.url%>/ readonly disabled></div>
+    <div class="container-item"><%= form.text_field :short_url, :placeholder => "url alias" %></div>
+    </div>
   </div>
 
   <div class="field">
