@@ -1,24 +1,30 @@
-# README
+# Url Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A web app that provides a url shortening tool for creating a short and unique URL that will redirect to a specific website of a user's choosing. 
+The app also displays a table of all the generated shortened urls contained in the database.
 
-Things you may want to cover:
+## Screenshots
 
-* Ruby version
+![](/app/assets/screenshots/minifier.png)
+![](/app/assets/screenshots/url_table.png)
+## About
 
-* System dependencies
+This small web application was developed as part of a school project for a Ruby / Ruby on Rails backend development course.
 
-* Configuration
+## Running instructions
+In the project directory, you can run:
 
-* Database creation
+```bash
+npm run devStart
+```
 
-* Database initialization
+This will launch the server and app
 
-* How to run the test suite
+## Built With
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby
+- ERB
+- Ruby On Rails
+- SQLite
+- HTML
+- CSS
